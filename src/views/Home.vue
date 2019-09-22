@@ -1,18 +1,37 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>Flash Card App</h1>
+    <ul>
+      <li v-for="(card, index) in cards" :key="index">
+        <Card :question="card.question" :answer="card.answer" />
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
-
+import Card from "../components/card";
 export default {
-  name: "home",
   components: {
-    HelloWorld
+    Card
+  },
+  data() {
+    return {
+      cards: [
+        {
+          question: "What's 1 + 1?",
+          answer: "2"
+        },
+        {
+          question: "What's 2 + 2?",
+          answer: "4"
+        },
+        {
+          question: "What's 3 + 3?",
+          answer: "6"
+        }
+      ]
+    };
   }
 };
 </script>
