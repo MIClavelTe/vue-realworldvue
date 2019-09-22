@@ -1,11 +1,15 @@
 <template>
   <div class="home">
     <h1>Flash Card App</h1>
-    <ul>
+    <ol>
       <li v-for="(card, index) in cards" :key="index">
         <Card :question="card.question" :answer="card.answer" />
       </li>
-    </ul>
+    </ol>
+
+    <p>Remove Flash Card #:</p>
+    <input type="text" v-model="deletedCard" />
+    <button @click="deleteCard">Delete</button>
   </div>
 </template>
 
@@ -30,8 +34,15 @@ export default {
           question: "What's 3 + 3?",
           answer: "6"
         }
-      ]
+      ],
+      deletedCard: 1
     };
+  },
+  methods: {
+    deleteCard() {
+      var start = this.deletedCard - 1;
+      this.cards.splice(start, 1);
+    }
   }
 };
 </script>
