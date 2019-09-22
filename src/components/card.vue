@@ -1,14 +1,38 @@
 <template>
   <div class="card">
+    <button class="editButton" v-if="edit == false" @click="edit = true">
+      Edit Flash Card
+    </button>
+    <button class="editButton" v-if="edit == true" @click="edit = false">
+      Save
+    </button>
+
     <h2>Question:</h2>
-    <p>{{ question }}</p>
+    <input
+      class="editInput"
+      type="text"
+      v-if="edit == true"
+      v-model="question"
+    />
 
-    <input type="text" placeholder="Your Answer" v-model="yourAnswer" />
-    <button @click="checkAnswer">Submit</button>
+    <p v-if="edit == false">{{ question }}</p>
 
-    <h2 v-if="correct == true">Correct!</h2>
+    <div v-if="edit == true">
+      <h2>Answer:</h2>
+      <input class="editInput" type="text" v-model="answer" />
+    </div>
 
-    <div class="answerReveal" v-if="correct == false">
+    <input
+      type="text"
+      placeholder="Your Answer"
+      v-model="yourAnswer"
+      v-if="edit == false"
+    />
+    <button @click="checkAnswer" v-if="edit == false">Submit</button>
+
+    <h2 v-if="correct == true && edit == false">Correct!</h2>
+
+    <div class="answerReveal" v-if="correct == false && edit == false">
       <button @click="revealAnswer">Reveal Answer</button>
       <h3 v-if="showAnswer == true">{{ answer }}</h3>
     </div>
@@ -31,7 +55,8 @@ export default {
     return {
       yourAnswer: "",
       correct: false,
-      showAnswer: false
+      showAnswer: false,
+      edit: false
     };
   },
   methods: {
@@ -58,5 +83,13 @@ export default {
 .answerReveal {
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.editButton {
+  margin-top: 10px;
+}
+
+.editInput {
+  margin-bottom: 20px;
 }
 </style>
