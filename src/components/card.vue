@@ -75,8 +75,8 @@ export default {
 <style>
 .card {
   border: 2px black dotted;
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: 200px;
+  margin-right: 200px;
   margin-bottom: 50px;
 }
 
