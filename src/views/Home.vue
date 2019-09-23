@@ -5,8 +5,9 @@
     <h3>Find Category</h3>
     <p>
       <select v-model="category">
-        <option>Addition</option>
-        <option>Money</option>
+        <option v-for="(option, index) in options" :key="index">
+          {{ option }}
+        </option>
       </select>
     </p>
 
@@ -20,7 +21,8 @@
 export default {
   data() {
     return {
-      category: ""
+      category: "",
+      options: ["Addition", "Subtraction"]
     };
   },
   computed: {
