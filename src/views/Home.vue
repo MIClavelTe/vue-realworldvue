@@ -22,7 +22,7 @@ export default {
   data() {
     return {
       category: "",
-      options: ["Addition", "Subtraction"]
+      options: ["Addition", "Money"]
     };
   },
   computed: {
