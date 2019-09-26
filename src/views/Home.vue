@@ -2,23 +2,18 @@
   <div>
     <h1>Flash Card App</h1>
 
-    <h3>Find Category</h3>
-    <p>
-      <select v-model="category">
-        <option v-for="(option, index) in options" :key="index">
-          {{ option }}
-        </option>
-      </select>
-    </p>
-
-    <router-link :to="whereTo">{{ category }}</router-link>
+    <Tabs />
 
     <router-view />
   </div>
 </template>
 
 <script>
+import Tabs from "../components/tabs";
 export default {
+  components: {
+    Tabs
+  },
   data() {
     return {
       category: "",
