@@ -20,22 +20,22 @@
 export default {
   data() {
     return {
-      question: "",
-      answer: ""
-    };
+      question: '',
+      answer: ''
+    }
   },
   methods: {
     onSubmit() {
       let card = {
         question: this.question,
         answer: this.answer
-      };
-      this.$emit("card-submitted", card);
-      this.question = null;
-      this.answer = null;
+      }
+      this.$emit('card-submitted', card)
+      this.question = null
+      this.answer = null
     }
   }
-};
+}
 </script>
 
 <style></style>

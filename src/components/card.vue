@@ -53,23 +53,23 @@ export default {
   },
   data() {
     return {
-      yourAnswer: "",
+      yourAnswer: '',
       correct: false,
       showAnswer: false,
       edit: false
-    };
+    }
   },
   methods: {
     checkAnswer() {
       if (this.yourAnswer == this.answer) {
-        return (this.correct = true);
+        return (this.correct = true)
       }
     },
     revealAnswer() {
-      return (this.showAnswer = true);
+      return (this.showAnswer = true)
     }
   }
-};
+}
 </script>
 
 <style>

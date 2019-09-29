@@ -9,23 +9,23 @@
 </template>
 
 <script>
-import Tabs from "../components/tabs";
+import Tabs from '../components/tabs'
 export default {
   components: {
     Tabs
   },
   data() {
     return {
-      category: "",
-      options: ["Addition", "Money"]
-    };
+      category: '',
+      options: ['Addition', 'Money']
+    }
   },
   computed: {
     whereTo() {
-      return "/" + this.category;
+      return '/' + this.category
     }
   }
-};
+}
 </script>
 
 <style>

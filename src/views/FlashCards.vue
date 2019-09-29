@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import Card from "../components/card";
-import AddCardForm from "../components/addCardForm";
+import Card from '../components/card'
+import AddCardForm from '../components/addCardForm'
 export default {
   props: {
     cards: {
@@ -37,16 +37,16 @@ export default {
   data() {
     return {
       deletedCard: 1
-    };
+    }
   },
   methods: {
     deleteCard() {
-      var start = this.deletedCard - 1;
-      this.cards.splice(start, 1);
+      var start = this.deletedCard - 1
+      this.cards.splice(start, 1)
     },
     addCard(card) {
-      this.cards.push(card);
+      this.cards.push(card)
     }
   }
-};
+}
 </script>

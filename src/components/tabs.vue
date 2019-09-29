@@ -17,30 +17,30 @@
 </template>
 
 <script>
-import FlashCards from "../views/FlashCards";
+import FlashCards from '../views/FlashCards'
 export default {
   components: {
     FlashCards
   },
   data() {
     return {
-      tabs: ["Addition", "Money"],
-      selectedTab: "Addition",
+      tabs: ['Addition', 'Money'],
+      selectedTab: 'Addition',
       additionCards: [
         {
           question: "What's 1 + 1?",
-          answer: "2"
+          answer: '2'
         }
       ],
       moneyCards: [
         {
           question: "What's 1 dime?",
-          answer: "10"
+          answer: '10'
         }
       ]
-    };
+    }
   }
-};
+}
 </script>
 
 <style>
